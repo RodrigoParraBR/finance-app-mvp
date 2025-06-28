@@ -1,0 +1,16 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Start Backend
+    command: |
+      cd backend && npm install && npm run dev
+  - name: Start Frontend
+    command: |
+      cd frontend && npm install && npm start
+
+ports:
+  - port: 3000   # React
+    onOpen: open-preview
+  - port: 4000   # Express
+    onOpen: ignore
